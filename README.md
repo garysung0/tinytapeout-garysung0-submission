@@ -1,82 +1,81 @@
 # Mixed-Signal Evaluation ASIC (SkyWater Sky130A)
 
-> **Macro**: `tt_um_garysung0_eval_macro`  
-> **Contact**: `garysung0@gmail.com`  
-> **Process**: SkyWater Sky130A (130 nm CMOS, 1P5M, 1.8 V Core)  
-> **Tiny Tapeout Slot**: 1x2 Analog Tile (330 × 160 µm, 52,800 µm²)  
+> **Macro**: `tt_um_garysung0_vdac`
+> **Process**: SkyWater Sky130A (130 nm CMOS, 1P5M, 1.8 V Core)
+> **Tiny Tapeout Slot**: 1x2 Analog Tile (330 × 160 µm, 52,800 µm²)
 
 ---
 
-## 1. System Overview
+## 1. Overview
 
-This repository contains the production tapeout deliverable package for a **Mixed-Signal Evaluation ASIC** fabricated on the SkyWater Sky130A process.
-
-### Features
-* Custom analog and mixed-signal evaluation structures.
-* Multi-channel analog test and characterization ports.
-* Synchronous digital control and test interface.
-* On-chip reference and diagnostic support logic.
-* Standard 1x2 tile shuttle macro footprint.
+Custom mixed-signal ASIC with analog measurement and characterization structures, a digital control fabric, and an SPI slave interface for register access. Designed for research evaluation purposes on the SkyWater Sky130A open-source process node.
 
 ---
 
-## 2. Pinout Configuration
+## 2. Pinout
 
-### Dedicated Analog Pads (`ua[5:0]`)
+### Analog Ports (`ua[7:0]`)
 | Pin | Signal | Description |
 | :--- | :--- | :--- |
-| `ua[0]` | `ua[0]` | Dedicated Analog Port 0 |
-| `ua[1]` | `ua[1]` | Dedicated Analog Port 1 |
-| `ua[2]` | `ua[2]` | Dedicated Analog Port 2 |
-| `ua[3]` | `ua[3]` | Dedicated Analog Port 3 |
-| `ua[4]` | `ua[4]` | Dedicated Analog Port 4 |
-| `ua[5]` | `ua[5]` | Dedicated Analog Port 5 |
+| `ua[0]` | `aout_0` | Analog Output 0 |
+| `ua[1]` | `aout_1` | Analog Output 1 |
+| `ua[2]` | `aout_2` | Analog Output 2 |
+| `ua[3]` | `aout_3` | Analog Output 3 |
+| `ua[4]` | `aio_0`  | Analog I/O 0 |
+| `ua[5]` | `aio_1`  | Analog I/O 1 |
+| `ua[6]` | `aio_2`  | Analog I/O 2 |
+| `ua[7]` | `aio_3`  | Analog I/O 3 |
 
-### Digital Input Pins (`ui_in[7:0]`)
-| Pin | Signal | Function |
+### Digital Inputs (`ui_in[7:0]`)
+| Pin | Signal | Description |
 | :--- | :--- | :--- |
-| `ui_in[0]` | `ui_in[0]` | Digital Input 0 |
-| `ui_in[1]` | `ui_in[1]` | Digital Input 1 |
-| `ui_in[2]` | `ui_in[2]` | Digital Input 2 |
-| `ui_in[3]` | `ui_in[3]` | Digital Input 3 / Reset |
-| `ui_in[4]` | `ui_in[4]` | Digital Input 4 |
-| `ui_in[5]` | `ui_in[5]` | Digital Input 5 |
-| `ui_in[6]` | `ui_in[6]` | Digital Input 6 |
-| `ui_in[7]` | `ui_in[7]` | Digital Input 7 |
+| `ui_in[0]` | `spi_clk`  | SPI Clock |
+| `ui_in[1]` | `spi_mosi` | SPI Data In |
+| `ui_in[2]` | `spi_cs_b` | SPI Chip Select (active low) |
+| `ui_in[3]` | `rst_n`    | Reset (active low) |
+| `ui_in[4]` | `mode_sel` | Mode Select |
+| `ui_in[5]` | `aux_en_0` | Auxiliary Enable 0 |
+| `ui_in[6]` | `aux_en_1` | Auxiliary Enable 1 |
+| `ui_in[7]` | `aux_en_2` | Auxiliary Enable 2 |
 
-### Digital Output Pins (`uo_out[7:0]`)
-| Pin | Signal | Function |
+### Digital Outputs (`uo_out[7:0]`)
+| Pin | Signal | Description |
 | :--- | :--- | :--- |
-| `uo_out[0]` | `uo_out[0]` | Digital Output 0 |
-| `uo_out[1]` | `uo_out[1]` | Digital Output 1 |
-| `uo_out[2]` | `uo_out[2]` | Digital Output 2 |
-| `uo_out[3]` | `uo_out[3]` | Digital Output 3 |
-| `uo_out[4]` | `uo_out[4]` | Digital Output 4 |
-| `uo_out[5]` | `uo_out[5]` | Digital Output 5 |
-| `uo_out[6]` | `uo_out[6]` | Digital Output 6 |
-| `uo_out[7]` | `uo_out[7]` | Digital Output 7 |
+| `uo_out[0]` | `spi_miso` | SPI Data Out |
+| `uo_out[1]` | `status_0` | Status Flag 0 |
+| `uo_out[2]` | `status_1` | Status Flag 1 |
+| `uo_out[3]` | `clk_div`  | Divided Clock Output |
+| `uo_out[4]` | `trig_0`   | Trigger Output 0 |
+| `uo_out[5]` | `fault_0`  | Fault Flag |
+| `uo_out[6]` | `status_2` | Status Flag 2 |
+| `uo_out[7]` | `status_3` | Status Flag 3 |
 
-### Bidirectional IO Pins (`uio_out[7:0]`)
-| Pin | Signal | Function |
+### Bidirectional IO (`uio[7:0]`)
+| Pin | Signal | Description |
 | :--- | :--- | :--- |
-| `uio_out[0]` | `uio_out[0]` | Bidirectional IO 0 |
-| `uio_out[1]` | `uio_out[1]` | Bidirectional IO 1 |
-| `uio_out[2]` | `uio_out[2]` | Bidirectional IO 2 |
-| `uio_out[3]` | `uio_out[3]` | Bidirectional IO 3 |
-| `uio_out[4]` | `uio_out[4]` | Bidirectional IO 4 |
-| `uio_out[5]` | `uio_out[5]` | Bidirectional IO 5 |
-| `uio_out[6]` | `uio_out[6]` | Bidirectional IO 6 |
-| `uio_out[7]` | `uio_out[7]` | Bidirectional IO 7 |
+| `uio[0]` | `aux_data_0` | Auxiliary Data 0 |
+| `uio[1]` | `aux_data_1` | Auxiliary Data 1 |
+| `uio[2]` | `aux_data_2` | Auxiliary Data 2 |
+| `uio[3]` | `flag_0`     | Flag 0 |
+| `uio[4]` | `flag_1`     | Flag 1 |
+| `uio[5]` | `flag_2`     | Flag 2 |
+| `uio[6]` | `flag_3`     | Flag 3 |
+| `uio[7]` | `flag_4`     | Flag 4 |
 
 ---
 
-## 3. Verification & Signoff Summary
-* **Layout Geometry**: 330.000 × 160.000 µm (100% Shuttle Compliance).
-* **DRC / LVS**: Zero DRC Violations | Zero LVS Discrepancies (SkyWater Sky130A).
-* **CMP Metal Densities**: All metal layers (M1–M5) within 20% to 80% planarity limits.
-* **Pre-Check**: Verified 100% PASS via `run_precheck.py`.
+## 3. Verification Summary
+
+| Check | Result |
+| :--- | :--- |
+| DRC (Magic / Sky130A) | 0 violations |
+| LVS (Netgen) | Circuits match uniquely |
+| Tile Boundary | 330.000 × 160.000 µm ✅ |
+| GDS Layer Sanity | 46 Sky130A layer pairs ✅ |
+| Precheck | 5/5 categories PASS ✅ |
 
 ---
 
-## 4. Commercial Licensing & Inquiries
-For private commercial licensing of un-obfuscated design schematics, parametric sizing models, or custom process node porting (e.g., TSMC / GlobalFoundries / SkyWater), contact: `garysung0@gmail.com`.
+## 4. Licensing
+
+For commercial inquiries contact: `garysung0@gmail.com`

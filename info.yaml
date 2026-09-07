@@ -1,58 +1,57 @@
-# Tiny Tapeout project information — 10-bit / 12-bit ENOB Kelvin-Varley VDAC SoC (SKY130A)
+# Tiny Tapeout project information
 project:
-  title: "10-Bit Native / 12-Bit ENOB Precision Kelvin-Varley VDAC SoC"
+  title: "Mixed-Signal Evaluation ASIC"
   author: "Gary Sung"
   discord: "garysung"
-  description: "SkyWater Sky130A 10-Bit Native / 12-Bit ENOB Kelvin-Varley VDAC SoC with digital dither engine, FMCW chirp generator, SPI slave, BGR, wirebond de-embedding, and TCAD test structures"
+  description: "Custom mixed-signal ASIC with analog characterization structures, digital control interface, and SPI slave. Fabricated on SkyWater Sky130A 130 nm CMOS."
   language: "Mixed-Signal"
   clock_hz: 50000000
 
   tiles: "1x2"
 
-  # Dedicated analog pads: 8-pad configuration
   analog_pins: 8
   uses_vapwr: false
 
   top_module: "tt_um_garysung0_vdac"
 
   source_files:
-    - "tt_um_garysung0_vdac_synth.v"
+    - src/tt_um_garysung0_vdac_synth.v
 
 pinout:
-  ui[0]: "sclk_raw / parallel_code[0]"
-  ui[1]: "mosi_raw / parallel_code[1]"
-  ui[2]: "cs_b_raw / parallel_code[2]"
-  ui[3]: "ext_rst_n / parallel_code[3]"
-  ui[4]: "spi_mode_en / parallel_code[4]"
-  ui[5]: "rosc_en / parallel_code[5]"
-  ui[6]: "parallel_code[6]"
-  ui[7]: "parallel_code[7]"
+  ui[0]: "spi_clk"
+  ui[1]: "spi_mosi"
+  ui[2]: "spi_cs_b"
+  ui[3]: "rst_n"
+  ui[4]: "mode_sel"
+  ui[5]: "aux_en_0"
+  ui[6]: "aux_en_1"
+  ui[7]: "aux_en_2"
 
-  uo[0]: "miso"
-  uo[1]: "por_ready"
-  uo[2]: "bgr_locked"
-  uo[3]: "osc_div256"
-  uo[4]: "chirp_sync"
-  uo[5]: "loc_fault"
-  uo[6]: "ip_unlocked"
-  uo[7]: "seu_alert"
+  uo[0]: "spi_miso"
+  uo[1]: "status_0"
+  uo[2]: "status_1"
+  uo[3]: "clk_div"
+  uo[4]: "trig_0"
+  uo[5]: "fault_0"
+  uo[6]: "status_2"
+  uo[7]: "status_3"
 
-  uio[0]: "parallel_code[8] / chirp_coarse_band[0]"
-  uio[1]: "parallel_code[9] / chirp_coarse_band[1]"
-  uio[2]: "chirp_coarse_band[2]"
-  uio[3]: "dither_active"
-  uio[4]: "glitch_active"
-  uio[5]: "bbm_shoot_err"
-  uio[6]: "analog_clamp"
-  uio[7]: "ramp_busy"
+  uio[0]: "aux_data_0"
+  uio[1]: "aux_data_1"
+  uio[2]: "aux_data_2"
+  uio[3]: "flag_0"
+  uio[4]: "flag_1"
+  uio[5]: "flag_2"
+  uio[6]: "flag_3"
+  uio[7]: "flag_4"
 
-  ua[0]: "vdac_core_out"
-  ua[1]: "vdac_buf_out"
-  ua[2]: "b25_telemetry_bus"
-  ua[3]: "vbg_1v2"
-  ua[4]: "kelvin_force"
-  ua[5]: "kelvin_sense"
-  ua[6]: "wirebond_open_baseline"
-  ua[7]: "wirebond_lc_pulser"
+  ua[0]: "aout_0"
+  ua[1]: "aout_1"
+  ua[2]: "aout_2"
+  ua[3]: "aout_3"
+  ua[4]: "aio_0"
+  ua[5]: "aio_1"
+  ua[6]: "aio_2"
+  ua[7]: "aio_3"
 
 yaml_version: 6
