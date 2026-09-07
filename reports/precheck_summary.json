@@ -1,0 +1,146 @@
+{
+  "timestamp": "2026-09-07T15:41:10.889166",
+  "macro_name": "tt_um_garysung0_vdac",
+  "tile_footprint_um": "330.0 x 160.0 (1x2 Tile, 52,800 \u00b5m\u00b2)",
+  "overall_status": "PASS",
+  "categories_passed": 5,
+  "categories_total": 5,
+  "results": {
+    "manifest_pinout_check": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": []
+    },
+    "tile_boundary_check": {
+      "status": "PASS",
+      "details": {
+        "bbox_um": {
+          "xmin": 0.0,
+          "ymin": 0.0,
+          "xmax": 330.0,
+          "ymax": 160.0
+        },
+        "dimensions_um": {
+          "width": 330.0,
+          "height": 160.0
+        },
+        "tile_limit_um": {
+          "width": 330.0,
+          "height": 160.0
+        },
+        "pr_bnd_verified": true
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "gds_layer_map_check": {
+      "status": "PASS",
+      "details": {
+        "total_unique_layers_found": 46,
+        "invalid_layers_count": 0,
+        "valid_layer_pairs": [
+          "64:18",
+          "64:20",
+          "65:20",
+          "65:44",
+          "66:13",
+          "66:20",
+          "66:44",
+          "67:16",
+          "67:20",
+          "67:23",
+          "67:44",
+          "68:5",
+          "68:16",
+          "68:20",
+          "68:23",
+          "68:44",
+          "69:5",
+          "69:16",
+          "69:20",
+          "69:23",
+          "69:44",
+          "70:5",
+          "70:16",
+          "70:20",
+          "70:23",
+          "70:44",
+          "71:5",
+          "71:16",
+          "71:20",
+          "71:23",
+          "71:44",
+          "72:5",
+          "72:16",
+          "72:20",
+          "76:20",
+          "81:14",
+          "81:15",
+          "81:53",
+          "82:44",
+          "89:44",
+          "93:44",
+          "94:20",
+          "95:20",
+          "115:20",
+          "235:4",
+          "236:0"
+        ]
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "metal_density_check": {
+      "status": "PASS",
+      "densities": {
+        "MET1": {
+          "metal_layer": "MET1",
+          "layer_pair": "68:20",
+          "polygon_area_um2": 4799.91,
+          "density_pct": 9.09,
+          "target_range": "3.0% - 80.0% (Analog Tile: TT fill waiver)",
+          "status": "PASS"
+        },
+        "MET2": {
+          "metal_layer": "MET2",
+          "layer_pair": "69:20",
+          "polygon_area_um2": 3879.59,
+          "density_pct": 7.35,
+          "target_range": "3.0% - 80.0% (Analog Tile: TT fill waiver)",
+          "status": "PASS"
+        },
+        "MET3": {
+          "metal_layer": "MET3",
+          "layer_pair": "70:20",
+          "polygon_area_um2": 3068.62,
+          "density_pct": 5.81,
+          "target_range": "3.0% - 80.0% (Analog Tile: TT fill waiver)",
+          "status": "PASS"
+        },
+        "MET4": {
+          "metal_layer": "MET4",
+          "layer_pair": "71:20",
+          "polygon_area_um2": 6186.17,
+          "density_pct": 11.72,
+          "target_range": "3.0% - 80.0% (Analog Tile: TT fill waiver)",
+          "status": "PASS"
+        },
+        "MET5": {
+          "metal_layer": "MET5",
+          "layer_pair": "72:20",
+          "polygon_area_um2": 1828.5,
+          "density_pct": 3.46,
+          "target_range": "3.0% - 80.0% (Analog Tile: TT fill waiver)",
+          "status": "PASS"
+        }
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "abstract_views_check": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": []
+    }
+  }
+}

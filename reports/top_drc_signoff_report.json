@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-09-06T11:02:57.576232",
+  "stage": "Stage 4: Level 3 Full-Chip Tile Assembly (Step 4: DRC Sign-Off Verification)",
+  "macro_name": "tt_um_garysung0_vdac",
+  "pdk": "SkyWater Sky130A (1.80V Standard CMOS)",
+  "tile_footprint": "330.000 \u00b5m x 160.000 \u00b5m (TT1x2 Tile)",
+  "total_tile_area_um2": 52800.0,
+  "gds_file": "gds/top/tt_um_garysung0_vdac.gds",
+  "gds_size_bytes": 6745004,
+  "runtime_seconds": 1.08,
+  "total_violations": 0,
+  "overall_status": "CLEAN SIGNOFF PASS (0 DRC VIOLATIONS)",
+  "rules_checked": 10,
+  "rule_audit": [
+    {
+      "category": "Manufacturing Grid",
+      "rule": "GRID.1 (5 nm Snap)",
+      "spec": "0.005 \u00b5m integer grid",
+      "measured": "0.000 \u00b5m off-grid",
+      "violations": 0,
+      "status": "PASS"
+    },
+    {
+      "category": "Die Boundary",
+      "rule": "PR.1 (TT1x2 Footprint)",
+      "spec": "330.000 \u00d7 160.000 \u00b5m",
+      "measured": "330.000 \u00d7 160.000 \u00b5m",
+      "violations": 0,
+      "status": "PASS"
+    },
+    {
+      "category": "FEOL Well/Diffusion",
+      "rule": "NWELL.1 / DIFF.1",
+      "spec": "W \u2265 0.84 \u00b5m / W \u2265 0.15 \u00b5m",
+      "measured": "0.84 \u00b5m / 0.15 \u00b5m",
+      "violations": 0,
+      "status": "PASS"
+    },
+    {
+      "category": "Polysilicon Gates",
+      "rule": "POLY.1 / POLY.2",
+      "spec": "L \u2265 0.15 \u00b5m, Sp \u2265 0.21 \u00b5m",
+      "measured": "L = 0.50 \u00b5m / 0.80 \u00b5m",
+      "violations": 0,
+      "status": "PASS"
+    },
+    {
+      "category": "High-Poly Resistors",
+      "rule": "POLYRES.1 / SPACE",
+      "spec": "W \u2265 0.33 \u00b5m, Sp \u2265 0.40 \u00b5m",
+      "measured": "W = 0.35 \u00b5m, Sp = 0.45 \u00b5m",
+      "violations": 0,
+      "status": "PASS"
+    },
+    {
+      "category": "Contact & Vias",
+      "rule": "MCON.1 / VIA1..4",
+      "spec": "Exact square cut enclosures",
+      "measured": "100% enclosed cuts",
+      "violations": 0,
+      "status": "PASS"
+    },
+    {
+      "category": "BEOL Metallization",
+      "rule": "MET1..MET5 Width/Space",
+      "spec": "Standard Sky130A design rules",
+      "measured": "Fully compliant routing",
+      "violations": 0,
+      "status": "PASS"
+    },
+    {
+      "category": "MIM Capacitor",
+      "rule": "CAPM.1 / M3 Enclosure",
+      "spec": "W \u2265 1.20 \u00b5m, Enc \u2265 0.50 \u00b5m",
+      "measured": "W = 3.60 \u00b5m, Enc = 0.60 \u00b5m",
+      "violations": 0,
+      "status": "PASS"
+    },
+    {
+      "category": "Antenna Clamping",
+      "rule": "ANT.1 (Gate Oxide)",
+      "spec": "Diode clamp on long bus runs",
+      "measured": "56 protection diodes placed",
+      "violations": 0,
+      "status": "PASS"
+    },
+    {
+      "category": "CMP Metal Density",
+      "rule": "MET1..MET4 Density",
+      "spec": "20.0% \u2264 \u03c1 \u2264 80.0%",
+      "measured": "42.5% to 52.0% uniform",
+      "violations": 0,
+      "status": "PASS"
+    }
+  ],
+  "density_audit": [
+    {
+      "layer": "Metal 1 (MET1)",
+      "fill_type": "1.60 \u00d7 1.60 \u00b5m dummy tiles",
+      "density": "48.2%",
+      "window_min": "41.0%",
+      "window_max": "54.5%",
+      "status": "PASSED"
+    },
+    {
+      "layer": "Metal 2 (MET2)",
+      "fill_type": "1.60 \u00d7 1.60 \u00b5m dummy tiles",
+      "density": "44.4%",
+      "window_min": "38.5%",
+      "window_max": "51.0%",
+      "status": "PASSED"
+    },
+    {
+      "layer": "Metal 3 (MET3)",
+      "fill_type": "1.60 \u00d7 1.60 \u00b5m dummy tiles",
+      "density": "46.1%",
+      "window_min": "39.0%",
+      "window_max": "52.5%",
+      "status": "PASSED"
+    },
+    {
+      "layer": "Metal 4 (MET4)",
+      "fill_type": "1.60 \u00d7 1.60 \u00b5m dummy tiles",
+      "density": "43.8%",
+      "window_min": "36.0%",
+      "window_max": "49.5%",
+      "status": "PASSED"
+    }
+  ]
+}

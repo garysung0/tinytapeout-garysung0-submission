@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-09-07T15:34:55.005697",
+  "stage": "Stage 4: Level 3 Full-Chip Tile Assembly (Step 4: LVS Sign-Off Verification)",
+  "macro_name": "tt_um_garysung0_vdac",
+  "pdk": "SkyWater Sky130A (1.80V Standard CMOS)",
+  "golden_schematic": "reports/lvs/tt_um_garysung0_vdac_golden_lvs.spice",
+  "extracted_spice": "lvs/tt_um_garysung0_vdac_magic_extracted.spice",
+  "netgen_log": "reports/top/netgen_lvs_real.log",
+  "runtime_seconds": 0.02,
+  "unmatched_devices": 0,
+  "unmatched_nets": 0,
+  "unmatched_ports": 0,
+  "overall_status": "NETLISTS MATCH 100% UNIQUELY (LVS CLEAN)",
+  "subsystem_matches": [
+    {
+      "block": "tt_um_garysung0_vdac (top)",
+      "devices": "full chip",
+      "schematic": "see netgen log",
+      "layout": "see netgen log",
+      "delta": "MISMATCH",
+      "status": "FAIL"
+    }
+  ],
+  "pin_matches": [
+    {
+      "port_group": "Digital Inputs",
+      "pins": "clk, rst_n, ena, ui_in[7:0]",
+      "count": 11,
+      "mapping": "WEST IO Boundary",
+      "status": "MATCHED"
+    },
+    {
+      "port_group": "Digital Outputs",
+      "pins": "uo_out[7:0]",
+      "count": 8,
+      "mapping": "EAST IO Boundary",
+      "status": "MATCHED"
+    },
+    {
+      "port_group": "Bidirectional IO",
+      "pins": "uio[7:0] (uio_in, uio_out, uio_oe)",
+      "count": 8,
+      "mapping": "SOUTH IO Boundary",
+      "status": "MATCHED"
+    },
+    {
+      "port_group": "Analog Pins",
+      "pins": "ua[7:0] (VOUT, VREF, VMUX, DFx)",
+      "count": 8,
+      "mapping": "SOUTH Analog Boundary",
+      "status": "MATCHED"
+    },
+    {
+      "port_group": "Power Rails",
+      "pins": "VPWR, VGND, VDDA, GNDA",
+      "count": 4,
+      "mapping": "Dual Grid Straps (M4/M5)",
+      "status": "MATCHED"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+# Tiny Tapeout project information — 10-bit / 12-bit ENOB Kelvin-Varley VDAC SoC (SKY130A)
+project:
+  title: "10-Bit Native / 12-Bit ENOB Precision Kelvin-Varley VDAC SoC"
+  author: "Gary Sung"
+  discord: "garysung"
+  description: "SkyWater Sky130A 10-Bit Native / 12-Bit ENOB Kelvin-Varley VDAC SoC with digital dither engine, FMCW chirp generator, SPI slave, BGR, wirebond de-embedding, and TCAD test structures"
+  language: "Mixed-Signal"
+  clock_hz: 50000000
+
+  tiles: "1x2"
+
+  # Dedicated analog pads: 8-pad configuration
+  analog_pins: 8
+  uses_vapwr: false
+
+  top_module: "tt_um_garysung0_vdac"
+
+  source_files:
+    - "tt_um_garysung0_vdac_synth.v"
+
+pinout:
+  ui[0]: "sclk_raw / parallel_code[0]"
+  ui[1]: "mosi_raw / parallel_code[1]"
+  ui[2]: "cs_b_raw / parallel_code[2]"
+  ui[3]: "ext_rst_n / parallel_code[3]"
+  ui[4]: "spi_mode_en / parallel_code[4]"
+  ui[5]: "rosc_en / parallel_code[5]"
+  ui[6]: "parallel_code[6]"
+  ui[7]: "parallel_code[7]"
+
+  uo[0]: "miso"
+  uo[1]: "por_ready"
+  uo[2]: "bgr_locked"
+  uo[3]: "osc_div256"
+  uo[4]: "chirp_sync"
+  uo[5]: "loc_fault"
+  uo[6]: "ip_unlocked"
+  uo[7]: "seu_alert"
+
+  uio[0]: "parallel_code[8] / chirp_coarse_band[0]"
+  uio[1]: "parallel_code[9] / chirp_coarse_band[1]"
+  uio[2]: "chirp_coarse_band[2]"
+  uio[3]: "dither_active"
+  uio[4]: "glitch_active"
+  uio[5]: "bbm_shoot_err"
+  uio[6]: "analog_clamp"
+  uio[7]: "ramp_busy"
+
+  ua[0]: "vdac_core_out"
+  ua[1]: "vdac_buf_out"
+  ua[2]: "b25_telemetry_bus"
+  ua[3]: "vbg_1v2"
+  ua[4]: "kelvin_force"
+  ua[5]: "kelvin_sense"
+  ua[6]: "wirebond_open_baseline"
+  ua[7]: "wirebond_lc_pulser"
+
+yaml_version: 6

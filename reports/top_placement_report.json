@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-09-07T14:40:13.795878",
+  "macro_name": "tt_um_garysung0_vdac",
+  "footprint_um": "330.0 x 160.0",
+  "area_um2": 52800.0,
+  "gds_file": "/home/sunghome/onedrive/Graduate/Thesis/vdac_repos/tinytapeout-vdac3-layout/gds/top/tt_um_garysung0_vdac.gds",
+  "gds_size_bytes": 2360436,
+  "total_cells": 10,
+  "instantiated_clusters": [
+    {
+      "name": "tt_um_garysung0_vdac_digital",
+      "origin": "(0.0, 0.0)",
+      "bounds": "[9.8, 9.7, 80.1, 150.0]"
+    },
+    {
+      "name": "cluster_vdac_core",
+      "origin": "(95.0, 10.0)",
+      "bounds": "[95.0, 10.0, 235.2, 78.0]"
+    },
+    {
+      "name": "cluster_ota_buffer",
+      "origin": "(95.0, 82.0)",
+      "bounds": "[95.0, 82.0, 145.0, 148.0]"
+    },
+    {
+      "name": "cluster_ref_bias",
+      "origin": "(136.0, 72.0)",
+      "bounds": "[146.0, 82.0, 270.0, 142.0]"
+    },
+    {
+      "name": "cluster_telemetry",
+      "origin": "(238.0, 10.0)",
+      "bounds": "[238.0, 10.0, 270.0, 76.0]"
+    },
+    {
+      "name": "cluster_tcad",
+      "origin": "(270.0, 12.0)",
+      "bounds": "[270.0, 12.0, 325.0, 148.0]"
+    }
+  ],
+  "pin_count": {
+    "west_inputs": 11,
+    "north_outputs": 8,
+    "south_bidir": 8,
+    "east_analog": 8,
+    "power_rails": 4,
+    "total_pins": 39
+  },
+  "status": "REMEDIATED_AND_ASSEMBLED"
+}

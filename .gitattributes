@@ -1,0 +1,26 @@
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# Binary layouts and archives
+*.gds binary
+*.gz  binary
+*.tar binary
+*.zip binary
+*.png binary
+*.pdf binary
+
+# EDA & Design deliverables
+*.lef text eol=lf
+*.def text eol=lf
+*.v   text eol=lf
+*.sv  text eol=lf
+*.sdc text eol=lf
+*.spef text eol=lf
+
+# Manifests and configs
+*.yaml text eol=lf
+*.yml  text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+*.py   text eol=lf
+*.sh   text eol=lf
