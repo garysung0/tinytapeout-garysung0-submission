@@ -9,7 +9,7 @@ project:
 
   tiles: "1x2"
 
-  analog_pins: 8
+  analog_pins: 6
   uses_vapwr: false
 
   top_module: "tt_um_garysung0_vdac"
@@ -51,7 +51,5 @@ pinout:
   ua[3]: "aout_3"
   ua[4]: "aio_0"
   ua[5]: "aio_1"
-  ua[6]: "aio_2"
-  ua[7]: "aio_3"
 
 yaml_version: 6
