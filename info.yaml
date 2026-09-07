@@ -15,7 +15,7 @@ project:
   top_module: "tt_um_garysung0_vdac"
 
   source_files:
-    - src/project.v
+    - "project.v"
 
 pinout:
   ui[0]: "spi_clk"
