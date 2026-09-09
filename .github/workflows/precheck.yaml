@@ -1,0 +1,44 @@
+name: Tiny Tapeout Shuttle Pre-Check Verification
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  tapeout-precheck:
+    name: 5-Category Signoff & Checksum Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Verification Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml gdstk
+
+      - name: Run Cryptographic SHA-256 Checksum Validation
+        run: |
+          sha256sum -c checksums.sha256
+
+      - name: Execute Automated 5-Category Pre-Check Suite
+        run: |
+          python3 run_precheck.py
+
+      - name: Archive Pre-Check Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: precheck-reports
+          path: reports/tapeout/
+          retention-days: 30
